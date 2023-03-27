@@ -15,10 +15,11 @@ pipeline {
             // }
             steps {
                 sh 'env'
-            }
-            script {
+                script {
                 isBuildAReplay()
             }
+            }
+            
         }
 
         stage('test') {
