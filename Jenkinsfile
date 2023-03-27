@@ -1,8 +1,4 @@
-def isBuildAReplay() {
-  // https://stackoverflow.com/questions/51555910/how-to-know-inside-jenkinsfile-script-that-current-build-is-an-replay/52302879#52302879
-  def replyClassName = "org.jenkinsci.plugins.workflow.cps.replay.ReplayCause"
-  currentBuild.rawBuild.getCauses().any{ cause -> cause.toString().contains(replyClassName) }
-}
+
 
 pipeline {
     agent any 
@@ -16,7 +12,8 @@ pipeline {
             steps {
                 sh 'env'
                 script {
-                isBuildAReplay()
+                def replyClassName = "org.jenkinsci.plugins.workflow.cps.replay.ReplayCause"
+  currentBuild.rawBuild.getCauses().any{ cause -> cause.toString().contains(replyClassName) }
             }
             }
             
