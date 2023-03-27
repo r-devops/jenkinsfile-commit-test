@@ -23,6 +23,9 @@ pipeline {
     }
     post {
         always {
+            script {
+                    currentBuild.displayName = GIT_COMMIT
+                }
            cleanWs() 
         }
     } 
