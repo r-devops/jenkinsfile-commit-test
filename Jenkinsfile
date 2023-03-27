@@ -10,9 +10,9 @@ pipeline {
     stages {
 
         stage('Build Name') {
-            when {
-                expression { jenkins.isBuildAReplay() }
-            }
+            // when {
+            //     expression { jenkins.isBuildAReplay() }
+            // }
             steps {
                 sh 'env'
             }
