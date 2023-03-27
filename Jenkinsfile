@@ -16,6 +16,9 @@ pipeline {
             steps {
                 sh 'env'
             }
+            script {
+                isBuildAReplay()
+            }
         }
 
         stage('test') {
