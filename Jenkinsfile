@@ -6,6 +6,10 @@ pipeline {
         stage('test') {
             steps {
                 sh 'env'
+
+                script {
+                    currentBuild.displayName = GIT_COMMIT
+                }
             }
 
         }
