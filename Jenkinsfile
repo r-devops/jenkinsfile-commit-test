@@ -3,13 +3,19 @@ pipeline {
 
     stages {
 
+        stage('Build Name') {
+            steps {
+                sh 'env'
+            }
+        }
+
         stage('test') {
             steps {
                 sh 'env'
 
-                script {
-                    currentBuild.displayName = GIT_COMMIT
-                }
+                // script {
+                //     currentBuild.displayName = GIT_COMMIT
+                // }
             }
 
         }
