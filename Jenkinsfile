@@ -5,7 +5,7 @@ pipeline {
 
         stage('test') {
             steps {
-                echo 'hai'
+                env
             }
 
         }
